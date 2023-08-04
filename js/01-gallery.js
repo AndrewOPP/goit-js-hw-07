@@ -1,12 +1,7 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
-console.log(galleryItems);
-
-
 const gallery = document.querySelector(".gallery")
-let galleryShow = false
-
 
 const app = galleryItems.map(({ preview, original, description }) => {
     const element =`
@@ -26,10 +21,6 @@ const app = galleryItems.map(({ preview, original, description }) => {
 
 gallery.insertAdjacentHTML("beforeend", app)
 
-
-
-
-
 gallery.addEventListener("click", (evn) => {
     evn.preventDefault()
     if (evn.target === evn.currentTarget) {
@@ -37,8 +28,6 @@ gallery.addEventListener("click", (evn) => {
     }
     const image = galleryItems.find(({ original }) => original === evn.target.dataset.source)
     
-    
-
     const instance = basicLightbox.create(`
     <div class="modal">
     <img src="${image.original}" alt="${image.description}">
@@ -54,12 +43,6 @@ gallery.addEventListener("click", (evn) => {
         }};
     
     document.addEventListener("keydown", firstCallback)
-       
- 
-    
-    
- 
-
 })
 
 

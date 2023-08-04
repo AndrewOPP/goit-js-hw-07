@@ -1,11 +1,6 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
-
-console.log(galleryItems);
-
 const gallery = document.querySelector(".gallery")
-
-
 
 const app = galleryItems.map(({ preview, original, description }) => {
     const element =`
@@ -20,9 +15,6 @@ const app = galleryItems.map(({ preview, original, description }) => {
 
 gallery.insertAdjacentHTML("beforeend", app)
 
-
-
-
 gallery.addEventListener("click", (evn) => {
     evn.preventDefault()
     if (evn.target === evn.currentTarget) {
@@ -30,10 +22,5 @@ gallery.addEventListener("click", (evn) => {
     }
 
     const image = galleryItems.find(({ description }) => description === evn.target.getAttribute("alt"))
-       console.log(image.description);
-    console.log(image);
     new SimpleLightbox('.gallery__item a', {captionsData: "alt", captionDelay: 250});
-    
-
-
 })
